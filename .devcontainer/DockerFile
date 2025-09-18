@@ -5,4 +5,3 @@ RUN apt-get update && apt-get install -y \
     git
 
 RUN pip install random_word
-RUN pip show random_word
