@@ -28,7 +28,10 @@ for i in range(1,16):
             rolls.append(roll)
             numRoll += 1
             if roll == 'X':
-                numRoll += 1
+                if numRoll == 19:
+                    numRoll -= 1
+                else:
+                    numRoll += 1
         allScores.append(rolls)
     with open("BowlingScore/input/input" + fileNum + ".txt", "a") as f:
         for rolls in allScores:
