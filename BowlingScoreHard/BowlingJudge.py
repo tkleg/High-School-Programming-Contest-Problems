@@ -1,7 +1,7 @@
 for i in range(1, 16):
     fileNum = str(i).zfill(2)
     fileAllScores = []
-    with open("BowlingScore/input/input" + fileNum + ".txt", "r") as input_file:
+    with open("BowlingScoreHard/input/input" + fileNum + ".txt", "r") as input_file:
         numPlayers = int(input_file.readline().strip())
         for playerNum in range(numPlayers):
             rolls = input_file.readline().strip().split(" ")
@@ -25,5 +25,5 @@ for i in range(1, 16):
                             score += 10
             fileAllScores.append((playerNum + 1, score))
     bestPlayerAndScore = max(fileAllScores, key=lambda x: x[1])
-    with open("BowlingScore/output/output" + fileNum + ".txt", "w") as f:
+    with open("BowlingScoreHard/output/output" + fileNum + ".txt", "w") as f:
         f.write( f"Player {bestPlayerAndScore[0]} wins with a score of {bestPlayerAndScore[1]}." )
