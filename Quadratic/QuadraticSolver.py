@@ -1,4 +1,4 @@
-for i in range(1, 16):
+for i in range(1, 8):
     fileNum = str(i).zfill(2)
     with open(f'Quadratic/input/input{ fileNum }.txt', 'r') as f:
         a, b, c = map(int, f.readline().strip().split())
@@ -6,8 +6,12 @@ for i in range(1, 16):
         print(a, b, c, d)
         with open(f'Quadratic/output/output{ fileNum }.txt', 'w') as f:
             if d >= 0:
-                root1 = (-b + d**0.5) / (2*a)
-                root2 = (-b - d**0.5) / (2*a)
-                f.write(f'{root1:.2f} {root2:.2f}')
+                if a == 0:
+                    root = -c / b
+                    f.write(f'{root:.2f}')
+                else:
+                    root1 = (-b + d**0.5) / (2*a)
+                    root2 = (-b - d**0.5) / (2*a)
+                    f.write(f'{root1:.2f} {root2:.2f}')
             else:
                 f.write('Roots are complex')
