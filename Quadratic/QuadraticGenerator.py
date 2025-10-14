@@ -1,6 +1,6 @@
 import random
 
-testCasesComplex = random.sample(range(1, 16), 3)
+testCasesComplex = random.sample(range(1, 8), 1)
 print("Test cases with complex roots:", testCasesComplex)
 for i in range(1, 8):
     fileNum = str(i).zfill(2)
@@ -12,6 +12,10 @@ for i in range(1, 8):
             c = random.randint(max_c-10, max_c)
         else:
             c = random.randint(max_c+1, max_c+10)
-        if i % 5 == 0:
+        if i == 5:
             a = 0
+        if i == 4:
+            b = 5
+            c = 38
+            a = 24
         f.write(f'{a} {b} {c}')

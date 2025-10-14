@@ -1,7 +1,7 @@
 import random
 import os
 
-for i in range(1,6):
+for i in range(1,8):
     fileNum = "0" + str(i) if i < 10 else str(i)
     with open("OutOfOrder/input/input"+fileNum+".txt", "w") as f:
         numLists = random.randint(1,10)
